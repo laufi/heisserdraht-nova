@@ -12,7 +12,9 @@ public class StoppUhrTest {
 		uhr.starteStoppuhr();
 		Thread.sleep(7);
 		uhr.stoppeStoppuhr();
-		assertEquals(7, uhr.getVerbrauchteZeit());
+		long verbrauchteZeit = uhr.getVerbrauchteZeit();
+		assertTrue(8 >= verbrauchteZeit);
+		assertTrue(6 <= verbrauchteZeit);
 	}
 	@Test(expected=StoppuhrNichtGestopptException.class)
 	public void testStoppuhrNichtGestoppt() throws StoppuhrNichtGestopptException{
