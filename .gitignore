@@ -6,3 +6,7 @@ build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
+
+.idea
+
+heisserdraht-nova.iml
