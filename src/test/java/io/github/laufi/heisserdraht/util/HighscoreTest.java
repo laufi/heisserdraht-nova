@@ -39,5 +39,6 @@ public class HighscoreTest {
         HighscoreEintrag[] top20 = highscore.top(20);
         assertEquals(top20[0].getScore(), 20);
         assertEquals(top20[4].getScore(), 12);
+        assertEquals(top20[19].getScore(), 0);
     }
 }
