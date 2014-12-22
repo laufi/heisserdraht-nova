@@ -11,6 +11,6 @@ public class Main {
     }
     private static void printWelcomeScreen() throws IOException {
         System.out.println(FigletFont.convertOneLine("Heißer Draht am OHG"));
-        System.out.println(FigletFont.convertOneLine(FigletFont.class.getClassLoader().getResourceAsStream("slant.flf"), "Wer ist am schnellsten?"));
+        System.out.println(FigletFont.convertOneLine(FigletFont.class.getClassLoader().getResourceAsStream("slant.flf"), "Wer ist am schnellsten ?"));
     }
 }
