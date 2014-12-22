@@ -20,4 +20,14 @@ public class HighscoreTest {
         HighscoreEintrag eintrag = highscore.getScore(0);
         assertEquals(eintrag.getScore(), 30);
     }
+    @Test
+    public void testTop20(){
+        Highscore highscore = new Highscore();
+        for(int i = 0; i <= 50; i = i + 2){
+            highscore.addScore(new HighscoreEintrag(i));
+        }
+        HighscoreEintrag[] top20 = highscore.top(20);
+        assertEquals(top20[0].getScore(), 50);
+        assertEquals(top20[3].getScore(), 42);
+    }
 }
