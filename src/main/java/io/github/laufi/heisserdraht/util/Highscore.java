@@ -20,7 +20,11 @@ public class Highscore{
         sortScore(new HighscoreEintragAbsteigendComparator());
         HighscoreEintrag[] ergebnis = new HighscoreEintrag[20];
         for (int i=0; i < 20; i++){
-            ergebnis[i] = getScore(i);
+            try {
+                ergebnis[i] = getScore(i);
+            } catch (IndexOutOfBoundsException e){
+                ergebnis[i] = new HighscoreEintrag(0);
+            }
         }
         return  ergebnis;
     }
