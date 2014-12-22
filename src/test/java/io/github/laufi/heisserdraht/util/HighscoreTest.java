@@ -18,7 +18,7 @@ public class HighscoreTest {
         highscore.addScore(new HighscoreEintrag(30));
         highscore.sortScore(new HighscoreEintragAbsteigendComparator());
         HighscoreEintrag eintrag = highscore.getScore(0);
-        assertEquals(eintrag.getScore(), 30);
+        assertEquals(eintrag.getScore(), 3000);
     }
     @Test
     public void testTop20(){
