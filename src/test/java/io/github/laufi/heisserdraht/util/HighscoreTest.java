@@ -41,4 +41,15 @@ public class HighscoreTest {
         assertEquals(top20[4].getScore(), 12);
         assertEquals(top20[19].getScore(), 0);
     }
+    @Test
+    public void testSaveAndLoad(){
+        Highscore highscore = new Highscore();
+        for(int i = 0; i <= 50; i = i + 2){
+            highscore.addScore(new HighscoreEintrag(i));
+        }
+        highscore.save();
+        Highscore anotherScore = new Highscore();
+        anotherScore.load();
+        assertEquals(50, anotherScore.getScore(25).getScore());
+    }
 }
