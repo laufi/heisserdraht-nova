@@ -1,5 +1,13 @@
 language: java
 sudo: false
 jdk:
-    - oraclejdk8
-    - oraclejdk7
+- oraclejdk8
+- oraclejdk7
+deploy:
+  provider: releases
+  api_key:
+    secure: A7iBSdpXcx3Tk08G7zVQX1p+/UjipNTw6bS1waRoOfFiUYKrdljd+IoUTK6vn4HfC2O4iQD4HkIqP2t79KZ4gwKXugqWFyLet6u+1EvYqnb3sJDDpeWklUdy8EwY8kRCHKPuQzBEYEjm+S4g0S02U3F22Hk7EyDN48QHr7k7jws=
+  file: build/libs/heisserdraht-nova.jar
+  on:
+    repo: laufi/heisserdraht-nova
+    branch: master
