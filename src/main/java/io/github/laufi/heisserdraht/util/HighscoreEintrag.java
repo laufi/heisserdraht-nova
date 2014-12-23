@@ -1,6 +1,8 @@
 package io.github.laufi.heisserdraht.util;
 
-public class HighscoreEintrag{
+import java.io.Serializable;
+
+public class HighscoreEintrag implements Serializable{
 	private int score;
 	private String name;
 	public HighscoreEintrag(String name, int score){
