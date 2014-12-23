@@ -30,4 +30,24 @@ public class Highscore implements Serializable{
         }
         return  ergebnis;
     }
+    public void save(){
+        try {
+            OutputStream fileWriter = new FileOutputStream("highscore.dat");
+            ObjectOutputStream objectWriter = new ObjectOutputStream(fileWriter);
+            objectWriter.writeObject(this);
+            objectWriter.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void load(){
+        try {
+            InputStream fileInput = new FileInputStream("highscore.dat");
+            ObjectInputStream objectInput = new ObjectInputStream(fileInput);
+            Highscore loadedObject = (Highscore) objectInput.readObject();
+            score.addAll(loadedObject.score);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
