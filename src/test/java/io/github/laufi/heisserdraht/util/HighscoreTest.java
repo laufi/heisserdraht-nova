@@ -1,8 +1,11 @@
 package io.github.laufi.heisserdraht.util;
 
 import static org.junit.Assert.*;
+
+import org.junit.AfterClass;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 public class HighscoreTest {
@@ -53,5 +56,18 @@ public class HighscoreTest {
         Highscore anotherScore = new Highscore();
         anotherScore.load();
         assertEquals(50, anotherScore.getScore(25).getScore());
+    }
+    @AfterClass
+    public static void tearDown() {
+        try{
+            File file = new File("highscore.dat");
+            if(file.delete()){
+                System.out.println(file.getName() + " is deleted!");
+            }else{
+                System.out.println("Delete operation is failed.");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
