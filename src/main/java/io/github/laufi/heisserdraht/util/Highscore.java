@@ -40,14 +40,15 @@ public class Highscore implements Serializable{
             e.printStackTrace();
         }
     }
-    public void load(){
+    public void load () throws IOException{
+        InputStream fileInput = new FileInputStream("highscore.dat");
+        ObjectInputStream objectInput = new ObjectInputStream(fileInput);
+        Highscore loadedObject = null;
         try {
-            InputStream fileInput = new FileInputStream("highscore.dat");
-            ObjectInputStream objectInput = new ObjectInputStream(fileInput);
-            Highscore loadedObject = (Highscore) objectInput.readObject();
-            score.addAll(loadedObject.score);
-        } catch (Exception e){
+            loadedObject = (Highscore) objectInput.readObject();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        score.addAll(loadedObject.score);
     }
 }

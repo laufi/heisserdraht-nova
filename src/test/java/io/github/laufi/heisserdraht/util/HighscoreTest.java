@@ -3,6 +3,8 @@ package io.github.laufi.heisserdraht.util;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.io.IOException;
+
 public class HighscoreTest {
     @Test
     public void testElementOutAndIn(){
@@ -42,7 +44,7 @@ public class HighscoreTest {
         assertEquals(top20[19].getScore(), 0);
     }
     @Test
-    public void testSaveAndLoad(){
+    public void testSaveAndLoad() throws IOException {
         Highscore highscore = new Highscore();
         for(int i = 0; i <= 50; i = i + 2){
             highscore.addScore(new HighscoreEintrag(i));
