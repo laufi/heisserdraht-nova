@@ -1,6 +1,8 @@
 apply plugin: 'java'
+apply plugin:'application'
 apply plugin: 'checkstyle'
 
+mainClassName = "io.github.laufi.heisserdraht.Main"
 repositories {
     mavenCentral()
     maven {
@@ -13,10 +15,4 @@ dependencies {
     checkstyle group: 'com.puppycrawl.tools', name: 'checkstyle', version: '6.1.1'
     compile group: 'com.github.lalyos', name: 'jfiglet', version: '0.0.5'
     compile group: 'dnl.utils', name: 'j-text-utils', version: '0.3.3'
-}
-jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    manifest {
-        attributes 'Main-Class': 'io.github.laufi.heisserdraht.Main'
-    }
 }
