@@ -8,7 +8,7 @@ public class HighscoreEintragTest{
 	public void testPOJOConstructor (){
 		HighscoreEintrag eintrag = new HighscoreEintrag("test",101);
 		assertTrue(eintrag.getName().equals("test"));
-		assertEquals(eintrag.getScore(), 101);
+		assertEquals(eintrag.getScore(), 101, 0);
 	}
 	@Test
 	public void testPOJOSets (){
@@ -16,19 +16,19 @@ public class HighscoreEintragTest{
 		eintrag.setName("test");
 		eintrag.setScore(101);
 		assertTrue(eintrag.getName().equals("test"));
-		assertEquals(eintrag.getScore(), 101);
+		assertEquals(eintrag.getScore(), 101, 0);
 	}
 	@Test
 	public void testPOJOConstructorAnonymous (){
 		HighscoreEintrag eintrag = new HighscoreEintrag(101);
 		assertTrue(eintrag.getName().equals("Anonymous"));
-		assertEquals(eintrag.getScore(), 101);
+		assertEquals(eintrag.getScore(), 101, 0);
 	}
 	@Test
 	public void testPOJOSetsAnonymous (){
 		HighscoreEintrag eintrag = new HighscoreEintrag();
 		eintrag.setScore(101);
 		assertTrue(eintrag.getName().equals("Anonymous"));
-		assertEquals(eintrag.getScore(), 101);
+		assertEquals(eintrag.getScore(), 101, 0);
 	}
 }

@@ -14,7 +14,7 @@ public class HighscoreTest {
         Highscore highscore = new Highscore();
         highscore.addScore(new HighscoreEintrag("test", 101));
         HighscoreEintrag eintrag = highscore.getScore(0);
-        assertEquals(eintrag.getScore(), 101);
+        assertEquals(eintrag.getScore(), 101, 0);
     }
     @Test
     public void testSortDesc(){
@@ -23,7 +23,7 @@ public class HighscoreTest {
         highscore.addScore(new HighscoreEintrag(30));
         highscore.sortScore(new HighscoreEintragAbsteigendComparator());
         HighscoreEintrag eintrag = highscore.getScore(0);
-        assertEquals(eintrag.getScore(), 3000);
+        assertEquals(eintrag.getScore(), 3000, 0);
     }
     @Test
     public void testTop20(){
@@ -32,8 +32,8 @@ public class HighscoreTest {
             highscore.addScore(new HighscoreEintrag(i));
         }
         HighscoreEintrag[] top20 = highscore.top(20);
-        assertEquals(top20[0].getScore(), 50);
-        assertEquals(top20[4].getScore(), 42);
+        assertEquals(top20[0].getScore(), 50, 0);
+        assertEquals(top20[4].getScore(), 42, 0);
     }
     @Test
     public void testTop20ZuWenig(){
@@ -42,9 +42,9 @@ public class HighscoreTest {
             highscore.addScore(new HighscoreEintrag(i));
         }
         HighscoreEintrag[] top20 = highscore.top(20);
-        assertEquals(top20[0].getScore(), 20);
-        assertEquals(top20[4].getScore(), 12);
-        assertEquals(top20[19].getScore(), 0);
+        assertEquals(top20[0].getScore(), 20, 0);
+        assertEquals(top20[4].getScore(), 12, 0);
+        assertEquals(top20[19].getScore(), 0, 0);
     }
     @Test
     public void testSaveAndLoad() throws IOException {
@@ -55,7 +55,7 @@ public class HighscoreTest {
         highscore.save();
         Highscore anotherScore = new Highscore();
         anotherScore.load();
-        assertEquals(50, anotherScore.getScore(25).getScore());
+        assertEquals(50, anotherScore.getScore(25).getScore(), 0);
     }
     @AfterClass
     public static void tearDown() {

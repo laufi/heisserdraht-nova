@@ -16,3 +16,6 @@ dependencies {
     compile group: 'com.github.lalyos', name: 'jfiglet', version: '0.0.5'
     compile group: 'dnl.utils', name: 'j-text-utils', version: '0.3.3'
 }
+run{
+    standardInput = System.in
+}
