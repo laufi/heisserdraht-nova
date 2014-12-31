@@ -3,19 +3,19 @@ package io.github.laufi.heisserdraht.util;
 import java.io.Serializable;
 
 public class HighscoreEintrag implements Serializable{
-	private int score;
+	private float score;
 	private String name;
 	public HighscoreEintrag(String name, int score){
 		this.score = score;
 		this.name = name;
 	}
-	public HighscoreEintrag(int score){
+	public HighscoreEintrag(float score){
 		this.score = score;
 	}
 	public HighscoreEintrag(){
 
 	}
-	public int getScore(){
+	public float getScore(){
 		return this.score;
 	}
 	public String getName(){

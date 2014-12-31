@@ -23,7 +23,7 @@ public class HighscoreTest {
         highscore.addScore(new HighscoreEintrag(30));
         highscore.sortScore(new HighscoreEintragAbsteigendComparator());
         HighscoreEintrag eintrag = highscore.getScore(0);
-        assertEquals(eintrag.getScore(), 3000, 0);
+        assertEquals(eintrag.getScore(), 30, 0);
     }
     @Test
     public void testTop20(){
@@ -32,8 +32,8 @@ public class HighscoreTest {
             highscore.addScore(new HighscoreEintrag(i));
         }
         HighscoreEintrag[] top20 = highscore.top(20);
-        assertEquals(top20[0].getScore(), 50, 0);
-        assertEquals(top20[4].getScore(), 42, 0);
+        assertEquals(top20[19].getScore(), 38, 0);
+        assertEquals(top20[14].getScore(), 28, 0);
     }
     @Test
     public void testTop20ZuWenig(){
@@ -42,8 +42,8 @@ public class HighscoreTest {
             highscore.addScore(new HighscoreEintrag(i));
         }
         HighscoreEintrag[] top20 = highscore.top(20);
-        assertEquals(top20[0].getScore(), 20, 0);
-        assertEquals(top20[4].getScore(), 12, 0);
+        assertEquals(top20[0].getScore(), 0, 0);
+        assertEquals(top20[4].getScore(), 8, 0);
         assertEquals(top20[19].getScore(), 0, 0);
     }
     @Test

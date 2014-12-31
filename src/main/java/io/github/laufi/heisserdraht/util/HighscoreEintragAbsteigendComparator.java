@@ -5,6 +5,12 @@ import java.util.Comparator;
 public class HighscoreEintragAbsteigendComparator implements Comparator <HighscoreEintrag> {
     @Override
     public int compare(HighscoreEintrag eintrag1, HighscoreEintrag eintrag2) {
-        return eintrag2.getScore() - eintrag1.getScore();
+        if (eintrag2.getScore() - eintrag1.getScore() > 0) {
+            return -1;
+        } else if (eintrag1 == eintrag2) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }
