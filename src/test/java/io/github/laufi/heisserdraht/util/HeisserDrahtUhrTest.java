@@ -13,8 +13,7 @@ public class HeisserDrahtUhrTest {
 		Thread.sleep(7);
 		uhr.stoppeSpiel();
 		long verbrauchteZeit = uhr.getVerbrauchteZeit();
-		assertTrue(8 >= verbrauchteZeit);
-		assertTrue(6 <= verbrauchteZeit);
+		assertEquals(verbrauchteZeit, 7, 4);
 	}
 	@Test
 	public void testFehlerfreiesSpiel() throws InterruptedException, StoppuhrNichtGestopptException{
@@ -34,11 +33,9 @@ public class HeisserDrahtUhrTest {
 		Thread.sleep(3);
 		uhr.stoppeSpiel();
 		long punktestand = uhr.getPunktestand();
-		assertTrue(10011 >= punktestand);
-		assertTrue(10009 <= punktestand);
+		assertEquals(punktestand, 10010, 4);
 		long verbrauchteZeit = uhr.getVerbrauchteZeit();
-		assertTrue(11 >= verbrauchteZeit);
-		assertTrue(9 <= verbrauchteZeit);
+		assertEquals(verbrauchteZeit, 10, 4);
 		assertEquals(2, uhr.getFehler());
 	}
 	@Test(expected=StoppuhrNichtGestopptException.class)
