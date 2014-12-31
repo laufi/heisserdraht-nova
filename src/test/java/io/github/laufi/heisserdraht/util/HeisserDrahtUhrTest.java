@@ -34,8 +34,8 @@ public class HeisserDrahtUhrTest {
 		Thread.sleep(3);
 		uhr.stoppeSpiel();
 		long punktestand = uhr.getPunktestand();
-		assertTrue(21 >= punktestand);
-		assertTrue(19 <= punktestand);
+		assertTrue(10011 >= punktestand);
+		assertTrue(10009 <= punktestand);
 		long verbrauchteZeit = uhr.getVerbrauchteZeit();
 		assertTrue(11 >= verbrauchteZeit);
 		assertTrue(9 <= verbrauchteZeit);

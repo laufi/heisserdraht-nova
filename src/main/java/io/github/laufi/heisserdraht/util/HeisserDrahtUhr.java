@@ -19,6 +19,6 @@ public class HeisserDrahtUhr extends StoppUhr {
 	}
 	public void stoppeSpiel() throws StoppuhrNichtGestopptException{
 		stoppeStoppuhr();
-		punktestand=getVerbrauchteZeit()+fehler*5;
+		punktestand=getVerbrauchteZeit()+fehler*5000;
 	}
 }
