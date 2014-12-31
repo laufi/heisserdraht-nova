@@ -31,9 +31,9 @@ public class Main {
             data[i][1] = top20[i].getScore();
         }
         TextTable tt = new TextTable(columnNames, data);
-// this adds the numbering on the left
+        // this adds the numbering on the left
         tt.setAddRowNumbering(true);
-// sort by the first column
+        // sort by the first column
         tt.setSort(0);
         tt.printTable();
     }
