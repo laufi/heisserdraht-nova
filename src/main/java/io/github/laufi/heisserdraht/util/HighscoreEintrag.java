@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class HighscoreEintrag implements Serializable{
 	private float score;
 	private String name;
-	public HighscoreEintrag(String name, int score){
+	public HighscoreEintrag(String name, float score){
 		this.score = score;
 		this.name = name;
 	}
