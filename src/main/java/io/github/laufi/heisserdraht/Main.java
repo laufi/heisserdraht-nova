@@ -5,9 +5,11 @@ import dnl.utils.text.table.TextTable;
 import io.github.laufi.heisserdraht.util.*;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws IOException, StoppuhrNichtGestopptException {
         Highscore highscore = new Highscore();
         try {
@@ -39,8 +41,6 @@ public class Main {
         TextTable tt = new TextTable(columnNames, data);
         // this adds the numbering on the left
         tt.setAddRowNumbering(true);
-        // sort by the first column
-        tt.setSort(0);
         tt.printTable();
 
     }
@@ -58,8 +58,13 @@ public class Main {
         Float[][] data = {{zeit,punktestand}};
         TextTable tt = new TextTable(columnNames, data);
         tt.printTable();
-        System.in.read();
-        highscore.addScore(new HighscoreEintrag(punktestand));
+        System.out.print("Gib deinen Namen für den Highscore an:");
+        String name = scanner.nextLine();
+        if (name.equals("")){
+            highscore.addScore(new HighscoreEintrag(punktestand));
+        } else {
+            highscore.addScore(new HighscoreEintrag(name, punktestand));
+        }
         home(highscore);
     }
 }
