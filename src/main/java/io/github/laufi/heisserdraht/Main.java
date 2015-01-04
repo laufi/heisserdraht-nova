@@ -51,11 +51,12 @@ public class Main {
         // Exception kann nicht geworfen werden / wäre fatal da Stoppuhr vorher gestartet wurde ==> Daher Abbruch bei Exception
         spiel.stoppeSpiel();
         float zeit = (float) spiel.getVerbrauchteZeit() / 1000;
+        float fehler = (float) spiel.getFehler();
         float punktestand = (float) spiel.getPunktestand() / 1000;
         ClearConsole.clearConsole();
         System.out.println(FigletFont.convertOneLine("Gut gemacht!"));
-        String[] columnNames = {"Zeit", "Punkte"};
-        Float[][] data = {{zeit,punktestand}};
+        String[] columnNames = {"Zeit", "Fehler", "Punkte"};
+        Float[][] data = {{zeit,fehler, punktestand}};
         TextTable tt = new TextTable(columnNames, data);
         tt.printTable();
         System.out.print("Gib deinen Namen für den Highscore an:");
