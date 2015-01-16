@@ -17,6 +17,7 @@ public class Main {
     static final GpioController gpio = GpioFactory.getInstance();
     static GpioPinDigitalInput draht = gpio.provisionDigitalInputPin(RaspiPin.GPIO_01);
     static GpioPinDigitalOutput led = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07);
+    static GpioPinDigitalOutput beeper = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06);
     public static void main(String[] args) throws IOException, StoppuhrNichtGestopptException {
         Highscore highscore = new Highscore();
         try {
@@ -24,6 +25,7 @@ public class Main {
         } catch (IOException e) {
         }
         draht.addTrigger(new GpioPulseStateTrigger(PinState.LOW, led, 550));
+        draht.addTrigger(new GpioPulseStateTrigger(PinState.LOW, beeper, 550));
         home(highscore);
     }
     public static void home(Highscore highscore) throws IOException, StoppuhrNichtGestopptException {
