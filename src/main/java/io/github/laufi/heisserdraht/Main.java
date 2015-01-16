@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static final GpioController gpio = GpioFactory.getInstance();
-    static GpioPinDigitalInput draht = gpio.provisionDigitalInputPin(RaspiPin.GPIO_05);
-    static GpioPinDigitalOutput led = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
+    static GpioPinDigitalInput draht = gpio.provisionDigitalInputPin(RaspiPin.GPIO_01);
+    static GpioPinDigitalOutput led = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07);
     public static void main(String[] args) throws IOException, StoppuhrNichtGestopptException {
         Highscore highscore = new Highscore();
         try {
